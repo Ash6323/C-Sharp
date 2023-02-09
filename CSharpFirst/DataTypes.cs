@@ -31,10 +31,15 @@ namespace DataTypes
             Console.WriteLine($"Max Value of int: {int.MaxValue}");
             Console.WriteLine();
 
+            //Pointer
+            /*unsafe
+            {
+                int num = 25;
 
-
-
-
+                int* ptr = &num;
+                Console.WriteLine($"Value of num is: {num}");
+                Console.WriteLine($"Address of num is: {(int)ptr}");
+            }*/
         }
     }
 }

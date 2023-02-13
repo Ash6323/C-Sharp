@@ -1,0 +1,15 @@
+E:\Work\IncubXperts\C-Sharp\BankConsoleApplication\BankSystemOrganised\obj\Debug\net6.0\BankSystemOrganised.csproj.AssemblyReference.cache
+E:\Work\IncubXperts\C-Sharp\BankConsoleApplication\BankSystemOrganised\obj\Debug\net6.0\BankSystemOrganised.GeneratedMSBuildEditorConfig.editorconfig
+E:\Work\IncubXperts\C-Sharp\BankConsoleApplication\BankSystemOrganised\obj\Debug\net6.0\BankSystemOrganised.AssemblyInfoInputs.cache
+E:\Work\IncubXperts\C-Sharp\BankConsoleApplication\BankSystemOrganised\obj\Debug\net6.0\BankSystemOrganised.AssemblyInfo.cs
+E:\Work\IncubXperts\C-Sharp\BankConsoleApplication\BankSystemOrganised\obj\Debug\net6.0\BankSystemOrganised.csproj.CoreCompileInputs.cache
+E:\Work\IncubXperts\C-Sharp\BankConsoleApplication\BankSystemOrganised\bin\Debug\net6.0\BankSystemOrganised.exe
+E:\Work\IncubXperts\C-Sharp\BankConsoleApplication\BankSystemOrganised\bin\Debug\net6.0\BankSystemOrganised.deps.json
+E:\Work\IncubXperts\C-Sharp\BankConsoleApplication\BankSystemOrganised\bin\Debug\net6.0\BankSystemOrganised.runtimeconfig.json
+E:\Work\IncubXperts\C-Sharp\BankConsoleApplication\BankSystemOrganised\bin\Debug\net6.0\BankSystemOrganised.dll
+E:\Work\IncubXperts\C-Sharp\BankConsoleApplication\BankSystemOrganised\bin\Debug\net6.0\BankSystemOrganised.pdb
+E:\Work\IncubXperts\C-Sharp\BankConsoleApplication\BankSystemOrganised\obj\Debug\net6.0\BankSystemOrganised.dll
+E:\Work\IncubXperts\C-Sharp\BankConsoleApplication\BankSystemOrganised\obj\Debug\net6.0\refint\BankSystemOrganised.dll
+E:\Work\IncubXperts\C-Sharp\BankConsoleApplication\BankSystemOrganised\obj\Debug\net6.0\BankSystemOrganised.pdb
+E:\Work\IncubXperts\C-Sharp\BankConsoleApplication\BankSystemOrganised\obj\Debug\net6.0\BankSystemOrganised.genruntimeconfig.cache
+E:\Work\IncubXperts\C-Sharp\BankConsoleApplication\BankSystemOrganised\obj\Debug\net6.0\ref\BankSystemOrganised.dll

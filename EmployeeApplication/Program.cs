@@ -1,10 +1,13 @@
-﻿namespace EmployeeApplication
+﻿using EmployeeSystemNamespace;
+
+namespace EmployeeApplication
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            EmployeeSystem emp = new EmployeeSystem();
+            emp.run();
         }
     }
 }

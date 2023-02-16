@@ -8,7 +8,7 @@ namespace BankSystemOrganised
         static void Main(string[] args)
         {
             BankSystem bankObj = new BankSystem();
-            bankObj.run();
+            bankObj.RunBankSystem();
         }
     }
 

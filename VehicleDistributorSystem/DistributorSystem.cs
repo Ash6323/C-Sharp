@@ -34,6 +34,17 @@ internal class VehicleDistributorSystem : DistributorClass
                     break;
             }
             
+            for(int j=0; j<i; j++)
+            {
+                if (distributor[i].modelName == distributor[j].modelName)
+                {
+                    distributor[i].basePrice = distributor[j].basePrice;
+                    distributor[i].manufacturerName = distributor[j].manufacturerName;
+                    distributor[i].vehicleCategory = distributor[j].vehicleCategory;
+                    goto skipKnownInputs;
+                }
+            }
+
             while(true)
             {
                 Console.Write("Enter the Manufacturer of Model: ");
@@ -72,7 +83,8 @@ internal class VehicleDistributorSystem : DistributorClass
                     break;
             }
 
-            while(true)
+            skipKnownInputs:
+            while (true)
             {
                 Console.Write("Enter the name of Distributor: ");
                 distributor[i].distributorName = Console.ReadLine();
@@ -94,14 +106,12 @@ internal class VehicleDistributorSystem : DistributorClass
             distributor[i].priceAfterCommission = CommissionCalculatorClass.CommissionCalculator(distributor[i].basePrice, distributor[i].commissionPercentage);
             DistributorList.Add(distributor[i]);
         }
-        List<double> sameVehicelPriceList = new List<double>();
+        List<double> sameVehiclePriceList = new List<double>();
 
         // PRINTING WHOLE DATABASE
         Console.WriteLine("\nSo Far, the Database for Vehicles in Distribution Centers is as Below-\n");
         foreach (var vehicle in DistributorList)
-        {
             Console.WriteLine("Manufacturer Name: {0}, Distributor Name: {1}, Model Name: {2}, Vehicle Category: {3}, Base Price: {4}, Commission: {5}%, Selling Price: {6}", vehicle.manufacturerName, vehicle.distributorName, vehicle.modelName, vehicle.vehicleCategory, vehicle.basePrice, vehicle.commissionPercentage, vehicle.priceAfterCommission);
-        }
 
         string findVehicleModel;
         while (true)
@@ -113,18 +123,23 @@ internal class VehicleDistributorSystem : DistributorClass
             else
                 break;
         }
+        int vehicleNotFoundCounter=0;
         // MAKING SEPARATE LIST FOR PRICES OF VEHICLES
         foreach(var vehicle in DistributorList)
         {
             if (vehicle.modelName == findVehicleModel)
-                sameVehicelPriceList.Add(vehicle.priceAfterCommission);
+                sameVehiclePriceList.Add(vehicle.priceAfterCommission);
             else
-            {
-                Console.WriteLine("No Matching Vehicle found in Distributor Databases. Exiting System...");
-                Environment.Exit(0);
-            }
+                vehicleNotFoundCounter += 1;
         }
-        double minSellingPrice = sameVehicelPriceList.Min();    //MIN OF ALL VEHICLE SELLING PRICES
+
+        if(vehicleNotFoundCounter == DistributorList.Capacity)
+        {
+            Console.WriteLine("\nNo Matching Vehicle found in Distributor Databases. Exiting System...\n");
+            Environment.Exit(0);
+        }
+
+        double minSellingPrice = sameVehiclePriceList.Min();    //MIN OF ALL VEHICLE SELLING PRICES
 
         // PRINTING DETAILS OF DISTRIBUTOR & MINIMUM PRICE FOR THE VEHICLE 
         foreach(var vehicle in DistributorList)

@@ -16,6 +16,6 @@ public static class ValidationMethods
     }
     public static bool ValidateStringOperationChoice(int num)
     {
-        return Regex.Match(num.ToString(), "[1-9]|[10][11]").Success;
+        return Regex.Match(num.ToString(), "[1-9]|[10]").Success;
     }
 }

@@ -28,7 +28,6 @@ internal class CountLine
             }
         }
         Console.Write("\nNumber of Lines: " + lineCount);
-
     }
 }
 

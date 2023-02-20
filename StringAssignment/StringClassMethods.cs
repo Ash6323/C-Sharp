@@ -20,14 +20,13 @@ internal class StringClassMethods
             else
                 Console.WriteLine(ConstantMessagesForOutput.wrongChoice);
         }
-
-        if(choice == 1)
+        if( choice == 1 )
         {
             Console.Write("Enter the String: ");
             inputString = Console.ReadLine();
             Console.WriteLine("Length of String: " + inputString.Length);
         }
-        else if(choice == 2)
+        else if( choice == 2 )
         {
             Console.Write("Enter the String: ");
             inputString = Console.ReadLine();
@@ -35,7 +34,7 @@ internal class StringClassMethods
             string inputString2 = Console.ReadLine();
             Console.WriteLine("Joined String is: "+ String.Concat(inputString, inputString2));
         }
-        else if (choice == 3)
+        else if ( choice == 3 )
         {
             Console.Write("Enter the String: ");
             inputString = Console.ReadLine();
@@ -43,7 +42,7 @@ internal class StringClassMethods
             string inputString2 = Console.ReadLine();
             Console.WriteLine("Are the Strings Same?: " + inputString.Equals(inputString2));
         }
-        else if(choice == 4)
+        else if( choice == 4 )
         {
             string[] splittedString;
             Console.Write("Enter the String: ");
@@ -53,7 +52,7 @@ internal class StringClassMethods
             for(int i = 0; i < splittedString.Length; i++)
                 Console.Write(splittedString[i]+" ");
         }
-        else if(choice == 5)
+        else if( choice == 5 )
         {
             Console.Write("Enter the String: ");
             inputString = Console.ReadLine();
@@ -63,7 +62,7 @@ internal class StringClassMethods
             string replacementString = Console.ReadLine();
             Console.WriteLine("New String After Replacement: " + inputString.Replace(toBeReplaced, replacementString));
         }
-        else if (choice==6)
+        else if ( choice==6 )
         {
             Console.Write("Enter the String: ");
             inputString = Console.ReadLine();
@@ -71,7 +70,7 @@ internal class StringClassMethods
             string toBeCheckedInString = Console.ReadLine();
             Console.WriteLine("Is the Substring Present in Given String?: " + inputString.Contains(toBeCheckedInString));
         }
-        else if (choice == 7)
+        else if ( choice == 7)
         {
             Console.Write("Enter Number of Strings to be Entered in Array: ");
             int numOfWords = Convert.ToInt16(Console.ReadLine());
@@ -88,7 +87,7 @@ internal class StringClassMethods
             inputString = Console.ReadLine();
             Console.WriteLine("String After Removing Leading/Trailing White Spcaes: " + inputString.Trim());
         }
-        else if(choice == 9 )
+        else if( choice == 9 )
         {
             Console.Write("Enter the String: ");
             inputString = Console.ReadLine();
@@ -96,7 +95,7 @@ internal class StringClassMethods
             char indexToBeFound = Convert.ToChar(Console.Read());
             Console.WriteLine($"Index of {indexToBeFound} is: {inputString.IndexOf(indexToBeFound)}");
         }
-        else if( choice==10 )
+        else if( choice == 10 )
         {
             Console.Write("Enter the String: ");
             inputString = Console.ReadLine();

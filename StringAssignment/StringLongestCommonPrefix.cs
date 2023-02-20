@@ -28,6 +28,9 @@ internal class LongestCommonPrefix
 			}
 		}
 		Console.Write("\nRepeated Prefixes are: ");
+		//List<string> forCountingRepeatedPrefixes = new List<string>();
+		//forCountingRepeatedPrefixes = repeatedPrefixes;
+        repeatedPrefixes = repeatedPrefixes.Distinct().ToList();
 		foreach(var s in repeatedPrefixes)
 			Console.Write(s + " ");
 		
@@ -39,12 +42,15 @@ internal class LongestCommonPrefix
 		}
 		Console.WriteLine("\n\nLongest Common Prefix is: " + longestCommonPrefix);
 
-		int longestCommonPrefixCount=0;
-		foreach(var s in repeatedPrefixes)
-		{
-			if (s == longestCommonPrefix)
-				longestCommonPrefixCount++;
-		}
-        Console.WriteLine("\nCount of Longest Common Prefix is: " + longestCommonPrefixCount);
+		//int longestCommonPrefixCount = 0;
+		//foreach(var s in forCountingRepeatedPrefixes)
+		//{
+		//	Console.Write("\n" + s + " ");
+		//	if (s.Equals(longestCommonPrefix))
+		//	{
+  //              longestCommonPrefixCount = longestCommonPrefixCount + 1;
+  //          }
+		//}
+  //      Console.WriteLine("\nCount of Longest Common Prefix is: " + longestCommonPrefixCount);
     }
 }

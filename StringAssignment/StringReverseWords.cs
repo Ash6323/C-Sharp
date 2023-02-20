@@ -10,6 +10,7 @@ internal class ReverseWords
         inputString = Console.ReadLine();
 
         string[] wordArray = inputString.Split(" ");
+        Console.Write("String After Reversing Each Word: ");
         for (int i = 0; i < wordArray.Length; i++)
         {
             string reverseWords = "";
@@ -18,5 +19,6 @@ internal class ReverseWords
             
             Console.Write(reverseWords + " ");
         }
+        Console.WriteLine();
     }
 }

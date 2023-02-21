@@ -10,8 +10,8 @@
     private protected string[] existingDebitCardNumbers = new string[5];
     private protected string[] existingAccountNumbers = new string[5];
     private protected string choice = "yes";
-    private protected int childCount, monthlyIncome, creditCardTypeChoice, accountCounter = 0;
-    private protected bool spousePresent, childrenPresent;
+    private protected int childCount, monthlyIncome, creditCardTypeChoice, accountCounter = 0, depositOrWithdrawChoice;
+    private protected bool spousePresent=false, childrenPresent;
 
     internal void DisplayAccountInformation()
     {
@@ -24,6 +24,8 @@
         Console.WriteLine("Contact Number is: " + contact);
         if (maritalStatus == "yes" || maritalStatus == "y")
             Console.WriteLine("Marital Status is: Married");
+        else if(maritalStatus == "D" || maritalStatus == "d")
+            Console.WriteLine("Marital Status is: Divorced");
         else
             Console.WriteLine("Marital Status is: Unmarried");
         if (spousePresent)

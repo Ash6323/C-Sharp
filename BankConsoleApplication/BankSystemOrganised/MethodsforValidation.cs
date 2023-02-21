@@ -39,7 +39,7 @@ public static class ValidationMethods
         }
         public static bool MaritalStatusValidate(string str)
         {
-            if (Regex.Match(str, "(?:y|n|yes|no|Yes|No|YES|NO)$").Success)
+            if (Regex.Match(str, "(?:y|n|yes|no|Yes|No|YES|NO|d|D)$").Success)
                 return false;
             else
                 return true;

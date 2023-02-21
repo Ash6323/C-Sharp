@@ -18,7 +18,7 @@ namespace DepositWithdrawalNamespace
                     Console.WriteLine(ConstantMessagesForOutput.Messages.wrongChoice);
                 else
                     break;
-            }           
+            }
             balance += depositAmount;
             totalAmountDeposited += depositAmount;
             if (totalAmountDeposited > 100000)
@@ -62,7 +62,7 @@ namespace DepositWithdrawalNamespace
             Console.WriteLine($"Balance in Account after Withdrawing {withdrawalAmount} is: Rs. {balance}");
         }
         internal double BalanceInAccount()
-        { 
+        {
             return balance;
         }
     }

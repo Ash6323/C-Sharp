@@ -382,7 +382,8 @@ namespace InnerSystem
             {
                 Console.WriteLine("\n* * * * Menu * * * *\n1. Deposit\n2. Withdraw\n3. Check Balance\n4. Exit");
                 Console.Write("\nWhat do you want to do?: ");
-                depositOrWithdrawChoice = Convert.ToInt16(Console.ReadLine());
+                //Double.TryParse(Console.ReadLine(), out depositOrWithdrawChoice);
+                depositOrWithdrawChoice = Convert.ToInt32(Console.ReadLine());
                 switch (depositOrWithdrawChoice)
                 {
                     case 1:

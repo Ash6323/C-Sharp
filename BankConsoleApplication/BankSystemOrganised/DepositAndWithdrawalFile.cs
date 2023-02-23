@@ -19,13 +19,20 @@ namespace DepositWithdrawalNamespace
                 else
                     break;
             }
-            balance += depositAmount;
-            totalAmountDeposited += depositAmount;
-            if (totalAmountDeposited > 100000)
-            {
-                balance -= depositAmount;
-                totalAmountDeposited -= depositAmount;
+            //balance += depositAmount;
+            //totalAmountDeposited += depositAmount;
+            //if (totalAmountDeposited > 100000)
+            //{
+            //    balance -= depositAmount;
+            //    totalAmountDeposited -= depositAmount;
+            //    throw new DepositOrWithdrawalFailedException("Daily Deposit Limit of Rs. 1,00,000 Exceeded");
+            //}
+            if ((totalAmountDeposited + depositAmount) > 100000)
                 throw new DepositOrWithdrawalFailedException("Daily Deposit Limit of Rs. 1,00,000 Exceeded");
+            else
+            {
+                totalAmountDeposited += depositAmount;
+                balance += depositAmount;
             }
             Console.WriteLine($"Balance in Account after Depositing {depositAmount} is: Rs. {balance}");
         }
@@ -45,20 +52,25 @@ namespace DepositWithdrawalNamespace
                 else
                     break;
             }
-            balance -= withdrawalAmount;
-            totalAmountWithdrawn += withdrawalAmount;
-            if (totalAmountWithdrawn > 50000)
-            {
-                balance += withdrawalAmount;
-                totalAmountWithdrawn -= withdrawalAmount;
+            //balance -= withdrawalAmount;
+            //totalAmountWithdrawn += withdrawalAmount;
+            //if (totalAmountWithdrawn > 50000)
+            //{
+            //    balance += withdrawalAmount;
+            //    totalAmountWithdrawn -= withdrawalAmount;
+            //    throw new DepositOrWithdrawalFailedException("Daily Withdrawal Limit of Rs. 50,000 Exceeded");
+            //}
+            if ((totalAmountWithdrawn + withdrawalAmount) > 50000)
                 throw new DepositOrWithdrawalFailedException("Daily Withdrawal Limit of Rs. 50,000 Exceeded");
-            }
-            if (balance < 0)
-            {
-                balance += withdrawalAmount;
-                totalAmountWithdrawn -= withdrawalAmount;
+            
+            else if ((balance - withdrawalAmount) < 0)
                 throw new DepositOrWithdrawalFailedException("Not Enough Balance. Please Check the Amount.");
-            }
+            
+            else
+            {
+                balance -= withdrawalAmount;
+                totalAmountWithdrawn += withdrawalAmount;
+            }           
             Console.WriteLine($"Balance in Account after Withdrawing {withdrawalAmount} is: Rs. {balance}");
         }
         internal double BalanceInAccount()

@@ -12,8 +12,7 @@ public class FileHandlingClass
         byte[] writeData = Encoding.Default.GetBytes("Hello World!!!");
         fileStream.Write(writeData, 0, writeData.Length);
         Console.WriteLine("Successfully Wrote the Message onto File\n");
-        fileStream.Close();
-        
+        fileStream.Close();       
         Console.ReadKey();
 
         StreamWriter sw = new StreamWriter("E:\\Work\\IncubXperts\\C-Sharp\\PracticeProject\\MyFile.txt");
@@ -35,5 +34,18 @@ public class FileHandlingClass
             str = sr.ReadLine();
         }
         sr.Close();
+
+        Console.Write("\nReading first 4 characters using TextReader- ");
+        using (TextReader textReader = File.OpenText(filePath))
+        {
+            char[] ch = new char[4];
+            textReader.ReadBlock(ch, 0, 4);
+            Console.WriteLine(ch);
+        }
+        Console.Write("Reading full file using TextReader- ");
+        using (TextReader textReader = File.OpenText(filePath))
+        {
+            Console.WriteLine(textReader.ReadToEnd());
+        }
     }
 }

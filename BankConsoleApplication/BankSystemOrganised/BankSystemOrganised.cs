@@ -425,7 +425,6 @@ namespace InnerSystem
                         break;
                 }
             }
-
             //while (true)
             //{
             //    Console.Write("\nCreate Another Account? (yes/no or y/n): ");
@@ -441,7 +440,6 @@ namespace InnerSystem
             //    else
             //        Console.WriteLine(ConstantMessagesForOutput.Messages.wrongChoice);
             //}
-
             //}
         }    
     }

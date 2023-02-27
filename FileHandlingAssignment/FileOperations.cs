@@ -17,6 +17,11 @@ internal class FileOperations
         File.Move(sourceFilePath, destinationFilePath);
         Console.WriteLine("File Moved to Destination Folder...");
     }
+    internal void DeleteFile(string sourceFilePath)
+    {
+        File.Delete(sourceFilePath);
+        Console.WriteLine("File Deleted from Folder...");
+    }
     internal void AppendToFile(string sourceFilePath)
     {
         Console.Write("Enter the Text to Append: ");

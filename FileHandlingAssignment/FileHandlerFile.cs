@@ -79,28 +79,25 @@ internal class FileHandlerClass : FileOperations
                         {
                             CopyFile(filesToUpload[fileToEdit - 1]);
                             break;
-                        }
-                        //else if (fileOperationChoice == 4)
-                        //{
-                        //    MoveFile(filesToUpload[fileToEdit - 1]);
-
-                        //    break;
-                        //}
-                        //else if (fileOperationChoice == 4)
-                        //{
-
-                        //}
+                        }                     
                         else if (fileOperationChoice == 4)
                             break;
-
+                        //else if (fileOperationChoice == 5)
+                        //{
+                        //    MoveFile(filesToUpload[fileToEdit - 1]);
+                        //    break;
+                        //}
+                        //else if (fileOperationChoice == 6)
+                        //{
+                        //    DeleteFile(filesToUpload[fileToEdit - 1]);
+                        //    break;
+                        //}
                         else
                             Console.WriteLine(ConstantMessagesForOutput.wrongChoice);
                     }
                 }
                 else
-                {
                     Console.WriteLine(ConstantMessagesForOutput.wrongFileType);
-                }
             }
             else
                 Environment.Exit(0);

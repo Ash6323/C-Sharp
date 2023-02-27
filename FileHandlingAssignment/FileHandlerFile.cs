@@ -29,9 +29,9 @@ internal class FileHandlerClass : FileOperations
 		while(true)
 		{
             Console.WriteLine("\nSelected Files are- ");
+            int i = 1;
             foreach (string file in filesToUpload)
             {
-                int i = 1;
                 Console.WriteLine($"{i}. {Path.GetFileName(file)}");
                 i++;
             }

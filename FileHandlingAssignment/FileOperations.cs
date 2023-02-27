@@ -5,9 +5,19 @@ internal class FileOperations
 {
 	internal void CopyFile(string sourceFilePath)
 	{
-		string destinationFilePath = @"E:\\Work\\IncubXperts\\C-Sharp\\FileHandlingAssignment\\ResourceFiles\\CopyFolder\\"+ $"{Path.GetFileName(sourceFilePath)}";
-        File.Copy(sourceFilePath, destinationFilePath);
-        Console.WriteLine("File Copied to Destination Folder...\n");
+        Console.Write("Enter the Destination File Path (Without File Extension): ");
+        string destinationFilePath = Console.ReadLine();
+        //string destinationFilePath = @"E:\\Work\\IncubXperts\\C-Sharp\\FileHandlingAssignment\\ResourceFiles\\CopyFolder\\"+ $"{Path.GetFileName(sourceFilePath)}";
+        if (File.Exists(destinationFilePath + ".txt"))
+        {
+            Console.WriteLine(ConstantMessagesForOutput.fileAlreadyExists);
+            File.Copy(sourceFilePath, destinationFilePath + "-" + DateTime.Now.ToString("dd-MM-yy-HH-mm-ss") + ".txt");
+        }
+        else
+        {
+            File.Copy(sourceFilePath, destinationFilePath + ".txt");
+            Console.WriteLine("File Copied to Destination Folder...\n");
+        }
     }
     internal void MoveFile(string sourceFilePath)
     {

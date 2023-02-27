@@ -3,30 +3,41 @@ using System.IO;
 
 internal class FileHandlerClass : FileOperations
 {
-	private string directoryPath = @"E:\\Work\\IncubXperts\\C-Sharp\\FileHandlingAssignment\\ResourceFiles\\";
+	//private string directoryPath = @"E:\\Work\\IncubXperts\\C-Sharp\\FileHandlingAssignment\\ResourceFiles\\";
     internal void RunFileHandler()
 	{
-        string[] filesInDirectory = Directory.GetFiles(directoryPath);
+        int uploadFilesCount;
         Console.WriteLine("* * * * File Handler Console Application * * * *");
-        Console.WriteLine("\nAvailable Files-");
-        int j = 1;
-        foreach (string file in filesInDirectory)
-		{
-			Console.WriteLine($"{j}. {Path.GetFileName(file)}");
-			j++;
-		}
-        Console.Write("\nHow Many Files do you want to Upload?: ");
-		int uploadFilesCount = Convert.ToInt32(Console.ReadLine());
-		string[] filesToUpload = new string[uploadFilesCount];
-		int fileSelection, fileToEdit;
-        Console.WriteLine("\nSelect Files to Upload, One by One-");
+        while(true)
+        {
+            Console.Write("\nHow Many Files do you want to Upload?: ");
+            if (!int.TryParse(Console.ReadLine(), out uploadFilesCount))
+                Console.WriteLine(ConstantMessagesForOutput.wrongInput);
+            else
+                break;
+        }
+		string[] filesToUpload = new string[uploadFilesCount];		
+        Console.WriteLine("\nEnter Files to Upload, One by One-");
         for(int i = 0; i < uploadFilesCount; i++)
 		{
-            Console.Write($"Choose File {i+1}: ");
-			fileSelection = Convert.ToInt32(Console.ReadLine());
-			filesToUpload[i] = filesInDirectory[fileSelection-1];
+            while(true)
+            {
+                Console.Write($"Enter Path of File {i + 1}: ");
+                string selectedFilePath = Console.ReadLine();
+                if (filesToUpload.Contains(selectedFilePath))
+                    Console.WriteLine(ConstantMessagesForOutput.fileAlreadySelected);
+                else
+                {
+                    filesToUpload[i] = selectedFilePath;
+                    if (!File.Exists(filesToUpload[i]))
+                        Console.WriteLine(ConstantMessagesForOutput.fileDoesNotExist);
+                    else
+                        break;
+                }              
+            }
         }
-		while(true)
+        int fileToEdit;
+        while (true)
 		{
             Console.WriteLine("\nSelected Files are- ");
             int i = 1;
@@ -34,9 +45,15 @@ internal class FileHandlerClass : FileOperations
             {
                 Console.WriteLine($"{i}. {Path.GetFileName(file)}");
                 i++;
-            }
-            Console.Write("\nSelect File to Edit (Press Any Other to Exit): ");
-            fileToEdit = Convert.ToInt32(Console.ReadLine());
+            }                    
+            while(true)
+            {
+                Console.Write("\nSelect File to Edit (Press Any Other to Exit): ");
+                if (!int.TryParse(Console.ReadLine(), out fileToEdit))
+                    Console.WriteLine(ConstantMessagesForOutput.wrongInput);
+                else
+                    break;
+            }           
             if (fileToEdit <= filesToUpload.Length)
             {
                 FileInfo fileInfo = new FileInfo(filesToUpload[fileToEdit - 1]);
@@ -61,8 +78,14 @@ internal class FileHandlerClass : FileOperations
                         Console.WriteLine("What do you want to do?- ");
                         Console.WriteLine("1. Append to File\n2. Overwrite File\n3. Copy File\n4. Exit");
                         int fileOperationChoice;
-                        Console.Write("Your Choice: ");
-                        fileOperationChoice = Convert.ToInt32(Console.ReadLine());
+                        while(true)
+                        {
+                            Console.Write("Your Choice: ");
+                            if (!int.TryParse(Console.ReadLine(), out fileOperationChoice))
+                                Console.WriteLine(ConstantMessagesForOutput.wrongInput);
+                            else
+                                break;
+                        }
                         if (fileOperationChoice == 1)
                         {
                             AppendToFile(filesToUpload[fileToEdit - 1]);
@@ -91,7 +114,7 @@ internal class FileHandlerClass : FileOperations
                         //    break;
                         //}
                         else
-                            Console.WriteLine(ConstantMessagesForOutput.wrongChoice);
+                            Console.WriteLine(ConstantMessagesForOutput.wrongInput);
                     }
                 }
                 else

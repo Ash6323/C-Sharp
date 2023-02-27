@@ -1,0 +1,17 @@
+E:\Work\IncubXperts\C-Sharp\FileHandlingAssignment\bin\Debug\net6.0\FileHandlingAssignment.exe
+E:\Work\IncubXperts\C-Sharp\FileHandlingAssignment\bin\Debug\net6.0\FileHandlingAssignment.deps.json
+E:\Work\IncubXperts\C-Sharp\FileHandlingAssignment\bin\Debug\net6.0\FileHandlingAssignment.runtimeconfig.json
+E:\Work\IncubXperts\C-Sharp\FileHandlingAssignment\bin\Debug\net6.0\FileHandlingAssignment.dll
+E:\Work\IncubXperts\C-Sharp\FileHandlingAssignment\bin\Debug\net6.0\FileHandlingAssignment.pdb
+E:\Work\IncubXperts\C-Sharp\FileHandlingAssignment\obj\Debug\net6.0\FileHandlingAssignment.csproj.AssemblyReference.cache
+E:\Work\IncubXperts\C-Sharp\FileHandlingAssignment\obj\Debug\net6.0\FileHandlingAssignment.GeneratedMSBuildEditorConfig.editorconfig
+E:\Work\IncubXperts\C-Sharp\FileHandlingAssignment\obj\Debug\net6.0\FileHandlingAssignment.AssemblyInfoInputs.cache
+E:\Work\IncubXperts\C-Sharp\FileHandlingAssignment\obj\Debug\net6.0\FileHandlingAssignment.AssemblyInfo.cs
+E:\Work\IncubXperts\C-Sharp\FileHandlingAssignment\obj\Debug\net6.0\FileHandlingAssignment.csproj.CoreCompileInputs.cache
+E:\Work\IncubXperts\C-Sharp\FileHandlingAssignment\obj\Debug\net6.0\FileHandlingAssignment.dll
+E:\Work\IncubXperts\C-Sharp\FileHandlingAssignment\obj\Debug\net6.0\refint\FileHandlingAssignment.dll
+E:\Work\IncubXperts\C-Sharp\FileHandlingAssignment\obj\Debug\net6.0\FileHandlingAssignment.pdb
+E:\Work\IncubXperts\C-Sharp\FileHandlingAssignment\obj\Debug\net6.0\FileHandlingAssignment.genruntimeconfig.cache
+E:\Work\IncubXperts\C-Sharp\FileHandlingAssignment\obj\Debug\net6.0\ref\FileHandlingAssignment.dll
+E:\Work\IncubXperts\C-Sharp\FileHandlingAssignment\bin\Debug\net6.0\ExcelLibrary.dll
+E:\Work\IncubXperts\C-Sharp\FileHandlingAssignment\obj\Debug\net6.0\FileHandlingAssignment.csproj.CopyComplete

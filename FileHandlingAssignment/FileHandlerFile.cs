@@ -28,7 +28,7 @@ internal class FileHandlerClass : FileOperations
         }
 		while(true)
 		{
-            Console.WriteLine("\n\nSelected Files are- ");
+            Console.WriteLine("\nSelected Files are- ");
             foreach (string file in filesToUpload)
             {
                 int i = 1;
@@ -43,7 +43,6 @@ internal class FileHandlerClass : FileOperations
                 if (fileInfo.Extension == ".jpg" || fileInfo.Extension == ".png")
                 {
                     Console.WriteLine(ConstantMessagesForOutput.cannotEditFileType);
-                    break;
                 }
                 else if (fileInfo.Extension == ".xls")
                 {

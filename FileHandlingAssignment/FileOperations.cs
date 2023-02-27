@@ -41,15 +41,51 @@ internal class FileOperations
     {
         Workbook workbook = new Workbook(); 
         Worksheet worksheet = new Worksheet("Sheet1"); 
-        worksheet.Cells[2, 0] = new Cell("Hello"); 
-        worksheet.Cells[2, 1] = new Cell("This");
-        worksheet.Cells[2, 2] = new Cell("is");
-        worksheet.Cells[2, 3] = new Cell("a");
-        worksheet.Cells[2, 4] = new Cell("Row"); 
-        worksheet.Cells[4, 2] = new Cell(DateTime.Now.ToString("dd/MM/yyyy"));
-        workbook.Worksheets.Add(worksheet); 
+        Console.Write("Please Enter Heading: ");
+        string headingforExcelFile = Console.ReadLine();
+        worksheet.Cells[0, 2] = new Cell(headingforExcelFile);
+        int numberOfRows, numberOfColumns;
+        while (true)
+        {
+            Console.Write("Please Enter Number of Rows (Maximum 3): ");
+            numberOfRows = Convert.ToInt32(Console.ReadLine());
+            if (numberOfRows < 1 || numberOfRows > 3)
+            {
+                Console.WriteLine(ConstantMessagesForOutput.invalidNumberOfRows);
+                continue;
+            }
+            Console.Write("Please Enter Number of Columns (Maximum 5): ");
+            numberOfColumns = Convert.ToInt32(Console.ReadLine());
+            if (numberOfColumns < 1 || numberOfColumns > 5)
+            {
+                Console.WriteLine(ConstantMessagesForOutput.invalidNumberOfColumns);
+                continue;
+            }
+            else
+                break;
+        }
+        Console.WriteLine("\nEnter the Content- ");
+        for(int i= 2; i<numberOfRows+2; i++)
+        {
+            for(int j= 0; j<numberOfColumns; j++)
+            {
+                Console.Write($"Cell [{i-2},{j}]: ");
+                worksheet.Cells[i,j] = new Cell(Console.ReadLine());
+            }
+        }
+        workbook.Worksheets.Add(worksheet);
         workbook.Save(sourceFilePath);
         Console.WriteLine("\nExcel File Edited...");
+
+        //For Write
+        //worksheet.Cells[2, 0] = new Cell("Hello"); 
+        //worksheet.Cells[2, 1] = new Cell("This");
+        //worksheet.Cells[2, 2] = new Cell("is");
+        //worksheet.Cells[2, 3] = new Cell("a");
+        //worksheet.Cells[2, 4] = new Cell("Row"); 
+        //worksheet.Cells[4, 2] = new Cell(DateTime.Now.ToString("dd/MM/yyyy"));
+        //workbook.Worksheets.Add(worksheet); 
+        //workbook.Save(sourceFilePath);
 
         //For Read
         //sourceFilePath = Path.GetFileName(sourceFilePath);

@@ -7,20 +7,18 @@ internal class FileOperations
 	{
 		string destinationFilePath = @"E:\\Work\\IncubXperts\\C-Sharp\\FileHandlingAssignment\\ResourceFiles\\CopyFolder\\"+ $"{Path.GetFileName(sourceFilePath)}";
         File.Copy(sourceFilePath, destinationFilePath);
-        //string lines = File.ReadAllText(destinationFilePath);
-        //Console.WriteLine(lines);
-        Console.WriteLine("File Copied to Destination Folder...");
+        Console.WriteLine("File Copied to Destination Folder...\n");
     }
     internal void MoveFile(string sourceFilePath)
     {
         string destinationFilePath = @"E:\\Work\\IncubXperts\\C-Sharp\\FileHandlingAssignment\\ResourceFiles\\CopyFolder\\" + $"{Path.GetFileName(sourceFilePath)}";
         File.Move(sourceFilePath, destinationFilePath);
-        Console.WriteLine("File Moved to Destination Folder...");
+        Console.WriteLine("File Moved to Destination Folder...\n");
     }
     internal void DeleteFile(string sourceFilePath)
     {
         File.Delete(sourceFilePath);
-        Console.WriteLine("File Deleted from Folder...");
+        Console.WriteLine("File Deleted from Folder...\n");
     }
     internal void AppendToFile(string sourceFilePath)
     {
@@ -30,17 +28,17 @@ internal class FileOperations
         {
             sw.WriteLine(textToAppend);
         }
-        Console.Write("Text Appended to File...");
+        Console.Write("Text Appended to File...\n");
     }
     internal void OverWriteFile(string sourceFilePath)
     {
-        Console.Write("Enter the Text to Append: ");
+        Console.Write("Enter the Text to Overwrite: ");
         string textToAppend = Console.ReadLine();
         using (TextWriter textWriter = File.CreateText(sourceFilePath))
         {
             textWriter.WriteLine(textToAppend);
         }
-        Console.Write("Text is Overwritten to File...");
+        Console.Write("Text is Overwritten to File...\n");
     }
     internal void ExcelOperation(string sourceFilePath)
     {
@@ -80,7 +78,7 @@ internal class FileOperations
         }
         workbook.Worksheets.Add(worksheet);
         workbook.Save(sourceFilePath);
-        Console.WriteLine("\nExcel File Edited...");
+        Console.WriteLine("Excel File Edited...\n");
 
         //For Write
         //worksheet.Cells[2, 0] = new Cell("Hello"); 

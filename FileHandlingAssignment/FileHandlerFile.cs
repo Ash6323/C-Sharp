@@ -41,13 +41,11 @@ internal class FileHandlerClass : FileOperations
             {
                 FileInfo fileInfo = new FileInfo(filesToUpload[fileToEdit - 1]);
                 if (fileInfo.Extension == ".jpg" || fileInfo.Extension == ".png")
-                {
                     Console.WriteLine(ConstantMessagesForOutput.cannotEditFileType);
-                }
+
                 else if (fileInfo.Extension == ".xls")
-                {
                     ExcelOperation(filesToUpload[fileToEdit - 1]);
-                }
+                
                 else if(fileInfo.Extension == ".txt")
                 {
                     Console.WriteLine("\nExisting Content in File- \n");

@@ -7,11 +7,14 @@
             //QueueTest queue = new QueueTest();
             //queue.runQueue();
 
-            FileHandlingClass fileHandling = new FileHandlingClass();
-            fileHandling.runFileHandler();
+            //FileHandlingClass fileHandling = new FileHandlingClass();
+            //fileHandling.runFileHandler();
 
             //ParentClass a = new ChildClass();
             //ChildClass b = new ParentClass();     //Gives Compiler Error
+
+            AsyncAndAwait runnableObject = new AsyncAndAwait();
+            runnableObject.MainMethod();
         }
     }
 }

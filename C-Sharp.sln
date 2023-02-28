@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StringAssignment", "StringA
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PracticeProject", "PracticeProject\PracticeProject.csproj", "{3EE4D870-482C-4C54-82E5-EC666CBE95DE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileHandlingAssignment", "FileHandlingAssignment\FileHandlingAssignment.csproj", "{47986874-96B0-4F58-B644-84F7CE71B0D0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FileHandlingAssignment", "FileHandlingAssignment\FileHandlingAssignment.csproj", "{47986874-96B0-4F58-B644-84F7CE71B0D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextFileHandlingAssignment", "TextFileHandlingAssignment\TextFileHandlingAssignment.csproj", "{F1B5AE0C-DFF8-487B-A4F5-BD841319DCE2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{47986874-96B0-4F58-B644-84F7CE71B0D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{47986874-96B0-4F58-B644-84F7CE71B0D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{47986874-96B0-4F58-B644-84F7CE71B0D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1B5AE0C-DFF8-487B-A4F5-BD841319DCE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1B5AE0C-DFF8-487B-A4F5-BD841319DCE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1B5AE0C-DFF8-487B-A4F5-BD841319DCE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1B5AE0C-DFF8-487B-A4F5-BD841319DCE2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

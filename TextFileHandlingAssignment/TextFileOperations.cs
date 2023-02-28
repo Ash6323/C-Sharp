@@ -54,26 +54,54 @@ internal class TextFileOperations
     internal void DisplayAndReplaceWord(string sourceFilePath)
     {
         string wordToBeReplaced;
+        List<string> wordsInFile = new List<string>();
         DisplayFileContent(sourceFilePath);
-        while(true)
+        bool flag = false;
+        while (true)
         {
             Console.Write("\nEnter the Word that is to be Replaced: ");
             wordToBeReplaced = Console.ReadLine();
-            string textInFile = " " + File.ReadAllText(sourceFilePath) + " ";
-            int indexOfWordInFile = textInFile.IndexOf(wordToBeReplaced);
-            if (!File.ReadAllText(sourceFilePath).Contains(wordToBeReplaced))
+            //int indexOfWordInFile = textInFile.IndexOf(wordToBeReplaced);
+            if (File.ReadAllText(sourceFilePath).Contains(wordToBeReplaced))
             {
-                Console.WriteLine(ConstantMessagesForOutput.wordNotPresent);
-                continue;
+                //Console.WriteLine(ConstantMessagesForOutput.wordNotPresent);
+                string textInFile = File.ReadAllText(sourceFilePath);
+                char[] delimiters = {' ','\n','\r'};
+                string[] textInFileArray = textInFile.Split(delimiters);
+                
+                for (int i = 0; i < textInFileArray.Length; i++)
+                    wordsInFile.Add(textInFileArray[i]);
+
+                foreach (string word in wordsInFile)
+                {
+                    if (word.Equals(wordToBeReplaced))
+                    {
+                        flag = true;
+                        break;
+                    }
+                }
+                if (flag)
+                    break;
+                else
+                    Console.WriteLine(ConstantMessagesForOutput.wordNotPresent);
             }
             else
-                break;          
-        }       
+            {
+                Console.WriteLine(ConstantMessagesForOutput.wordNotPresent);
+            }
+        }
         Console.Write("Enter the New Word which will Replace Old Word: ");
         string replacingWord = Console.ReadLine();
-        string text = File.ReadAllText(sourceFilePath);
-        text = text.Replace(wordToBeReplaced, replacingWord);
-        File.WriteAllText(sourceFilePath, text);
+        for(int i=0; i<wordsInFile.Count; i++)
+        {
+            if (wordsInFile[i].Equals(wordToBeReplaced))
+                wordsInFile[i] = replacingWord;
+        }
+        //string replacedWordsString = wordsInFile.Join(' ');
+        string replacedWordsString = string.Join(" ", wordsInFile);
+        //string text = File.ReadAllText(sourceFilePath);
+        replacedWordsString = replacedWordsString.Replace("  ", "\n");
+        File.WriteAllText(sourceFilePath, replacedWordsString);
         Console.WriteLine("Content in File After Replacing Words-");
         DisplayFileContent(sourceFilePath);
     }

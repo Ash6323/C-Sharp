@@ -61,10 +61,8 @@ internal class TextFileOperations
         {
             Console.Write("\nEnter the Word that is to be Replaced: ");
             wordToBeReplaced = Console.ReadLine();
-            //int indexOfWordInFile = textInFile.IndexOf(wordToBeReplaced);
             if (File.ReadAllText(sourceFilePath).Contains(wordToBeReplaced))
             {
-                //Console.WriteLine(ConstantMessagesForOutput.wordNotPresent);
                 string textInFile = File.ReadAllText(sourceFilePath);
                 char[] delimiters = {' ','\n','\r'};
                 string[] textInFileArray = textInFile.Split(delimiters);
@@ -86,9 +84,7 @@ internal class TextFileOperations
                     Console.WriteLine(ConstantMessagesForOutput.wordNotPresent);
             }
             else
-            {
                 Console.WriteLine(ConstantMessagesForOutput.wordNotPresent);
-            }
         }
         Console.Write("Enter the New Word which will Replace Old Word: ");
         string replacingWord = Console.ReadLine();
@@ -97,9 +93,7 @@ internal class TextFileOperations
             if (wordsInFile[i].Equals(wordToBeReplaced))
                 wordsInFile[i] = replacingWord;
         }
-        //string replacedWordsString = wordsInFile.Join(' ');
         string replacedWordsString = string.Join(" ", wordsInFile);
-        //string text = File.ReadAllText(sourceFilePath);
         replacedWordsString = replacedWordsString.Replace("  ", "\n");
         File.WriteAllText(sourceFilePath, replacedWordsString);
         Console.WriteLine("Content in File After Replacing Words-");

@@ -2,7 +2,6 @@
 public static class ConstantMessagesForOutput
 {
     public const string wrongInput = "Wrong Input!! Please Try Again.";
-    public const string notAWord = "Entered String is not a Word in the File!! Try Again...";
     public const string wrongFileType = "Wrong File Type!! Try Again...";
     public const string fileDoesNotExist = "The Given File or Path Does Not Exist!! Try Again...";
     public const string wordNotPresent = "The Word you're trying to replace doesn't exist in File. Try Again...";

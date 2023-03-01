@@ -1,9 +1,10 @@
 ﻿using System;
 using System.IO;
+using System.Reflection;
 
 internal class FileHandlerClass : FileOperations
 {
-	//private string directoryPath = @"E:\\Work\\IncubXperts\\C-Sharp\\FileHandlingAssignment\\ResourceFiles\\";
+	private string uploadDirectoryPath = @"E:\\Work\\IncubXperts\\C-Sharp\\FileHandlingAssignment\\Uploaded Files\\";
     internal void RunFileHandler()
 	{
         int uploadFilesCount;
@@ -16,7 +17,7 @@ internal class FileHandlerClass : FileOperations
             else
                 break;
         }
-		string[] filesToUpload = new string[uploadFilesCount];		
+		string[] filesToUpload = new string[uploadFilesCount];
         Console.WriteLine("\nEnter Files to Upload, One by One-");
         for(int i = 0; i < uploadFilesCount; i++)
 		{
@@ -24,22 +25,27 @@ internal class FileHandlerClass : FileOperations
             {
                 Console.Write($"Enter Path of File {i + 1}: ");
                 string selectedFilePath = Console.ReadLine();
-                if (filesToUpload.Contains(selectedFilePath))
+                FileInfo fileInfo = new FileInfo(selectedFilePath);
+                if (filesToUpload.Contains(uploadDirectoryPath + fileInfo.Name))
                     Console.WriteLine(ConstantMessagesForOutput.fileAlreadySelected);
                 else
-                {
-                    filesToUpload[i] = selectedFilePath;
-                    if (!File.Exists(filesToUpload[i]))
+                {                   
+                    if (!File.Exists(selectedFilePath))
                         Console.WriteLine(ConstantMessagesForOutput.fileDoesNotExist);
                     else
+                    {
+                        filesToUpload[i] = uploadDirectoryPath + fileInfo.Name;
+                        File.Copy(selectedFilePath, filesToUpload[i]);
                         break;
-                }              
+                    }                       
+                }
             }
         }
+        Console.WriteLine("\nFiles Uploaded...");
         int fileToEdit;
         while (true)
 		{
-            Console.WriteLine("\nSelected Files are- ");
+            Console.WriteLine("\nUploaded Files are- ");
             int i = 1;
             foreach (string file in filesToUpload)
             {

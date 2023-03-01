@@ -5,7 +5,7 @@ internal class TextFileOperations
 {
 	internal void CopyFile(string sourceFilePath)
 	{
-        string destinationFileName = "", destinationFolderPath = "", destinationFilePath = "";
+        string destinationFileName = String.Empty, destinationFolderPath = String.Empty, destinationFilePath = String.Empty;
         try
         {
             Console.Write("\nEnter the Destination Folder Path: ");
@@ -29,8 +29,8 @@ internal class TextFileOperations
             }
             else
                 break;
-        }       
-        destinationFilePath = destinationFolderPath + "\\" + destinationFileName;
+        }
+        destinationFilePath = Path.Combine(destinationFolderPath, destinationFileName);
         if (File.Exists(destinationFilePath))
         {
             Console.WriteLine(ConstantMessagesForOutput.fileAlreadyExists);
@@ -48,7 +48,7 @@ internal class TextFileOperations
         {
             data = streamReader.ReadToEnd();
         }
-        Console.WriteLine("\nExisting Content in File- \n");
+        Console.WriteLine("\nContent in File- \n");
         Console.WriteLine(data);
     }
     internal void DisplayAndReplaceWord(string sourceFilePath)
@@ -95,8 +95,12 @@ internal class TextFileOperations
         }
         string replacedWordsString = string.Join(" ", wordsInFile);
         replacedWordsString = replacedWordsString.Replace("  ", "\n");
-        File.WriteAllText(sourceFilePath, replacedWordsString);
-        Console.WriteLine("Content in File After Replacing Words-");
+        using(FileStream fileStream = File.Open(sourceFilePath, FileMode.Open))
+        {
+            fileStream.SetLength(0);
+        }
+        File.AppendAllText(sourceFilePath, replacedWordsString);
+        Console.WriteLine("\nWords are Replaced...");
         DisplayFileContent(sourceFilePath);
     }
     internal void ReadLastLine(string sourceFilePath)

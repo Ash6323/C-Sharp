@@ -4,18 +4,22 @@ internal class TextFileHandlerClass : TextFileOperations
 {
 	internal void RunTextFileHandler()
 	{
-        string sourceDirectoryPath = "", sourceFileName = "", sourceFilePath="";
+        string sourceDirectoryPath =  String.Empty, sourceFileName = String.Empty, sourceFilePath = String.Empty;
         Console.WriteLine("* * * * File Handler Console Application * * * *");
         try
         {
             Console.Write("Enter the Directory Path: ");
             sourceDirectoryPath = Console.ReadLine();
-            Directory.SetCurrentDirectory(sourceDirectoryPath);     //To check DirectoryNotFoundException
+            if(!Directory.Exists(sourceDirectoryPath))
+                throw new DirectoryNotFoundException();
             while (true)
             {
                 Console.Write("Enter the File Name with Extension: ");
                 sourceFileName = Console.ReadLine();
-                sourceFilePath = sourceDirectoryPath + "\\" + sourceFileName;
+                sourceFilePath = Path.Combine(sourceDirectoryPath, sourceFileName);
+                if(!File.Exists(sourceFilePath))
+                    throw new FileNotFoundException();
+
                 FileInfo fileInfo = new FileInfo(sourceFilePath);
                 if (fileInfo.Extension != ".txt")
                     Console.WriteLine(ConstantMessagesForOutput.wrongFileType);

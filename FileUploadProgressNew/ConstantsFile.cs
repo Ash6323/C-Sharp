@@ -1,4 +1,4 @@
-﻿namespace FileUploadProgress
+﻿namespace FileUploadProgressNew
 {
     public static class ConstantStringsClass
     {

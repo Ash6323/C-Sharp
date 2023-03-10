@@ -16,7 +16,8 @@ namespace FileUploadProgress
                 else
                     break;
             }
-            
+            Task task = FileUploadClass.UploadFile(filePath, ConstantStringsClass.UploadDirectory);
+            Task.WhenAll(task).Wait();
         }
     }
 }
